@@ -11,9 +11,9 @@ sudo apt-get update
 sudo apt-get install -y bitcoind
 cd
 
-git clone git://github.com/sstephenson/rbenv.git /home/deploy/.rbenv
-git clone https://github.com/sstephenson/ruby-build.git /home/deploy/.rbenv/plugins/ruby-build
-sudo /home/deploy/.rbenv/plugins/ruby-build/install.sh
+git clone git://github.com/sstephenson/rbenv.git /peatio/deploy/.rbenv
+git clone https://github.com/sstephenson/ruby-build.git /peatio/deploy/.rbenv/plugins/ruby-build
+sudo /peatio/deploy/.rbenv/plugins/ruby-build/install.sh
 
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(rbenv init -)"' >> ~/.bashrc
@@ -24,7 +24,7 @@ rbenv install 2.5.1
 rbenv global 2.5.1
 
 git -c http.sslVerify=false clone https://galin_princeberk:eQq7Xc4mGPF8@10.10.10.39/galin_princeberk/my-peatio/
-cp -y /home/deploy/my-peatio/* /home/deploy/peatio/current
+cp -y /peatio/deploy/my-peatio/* /peatio/deploy/peatio/current
 
 echo "gem: --no-ri --no-rdoc" > ~/.gemrc
 gem install bundler -v 1.17.0
